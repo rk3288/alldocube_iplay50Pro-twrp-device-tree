@@ -102,7 +102,7 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 DISABLE_ARTIFACT_PATH_REQUIREMENTS := true
 
 # System as root
-BOARD_ROOT_EXTRA_FOLDERS := data_mirror debug_ramdisk linkerconfig metadata odm_dlkm oem postinstall prism second_stage_resources spu system_ext vendor_dlkm system_dlkm vendor_image
+BOARD_ROOT_EXTRA_FOLDERS := data_mirror debug_ramdisk linkerconfig metadata odm_dlkm oem postinstall second_stage_resources system_ext vendor_dlkm system_dlkm vendor_image
 
 
 # Recovery
@@ -124,14 +124,15 @@ BOARD_AVB_RECOVERY_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
 # Crypto
-PLATFORM_SECURITY_PATCH := 2024-01-01
-VENDOR_SECURITY_PATCH := 2024-01-01
-PLATFORM_VERSION := 13
-TW_INCLUDE_CRYPTO := false
-TW_INCLUDE_CRYPTO_FBE := false
-TW_INCLUDE_FBE_METADATA_DECRYPT := false
+PLATFORM_SECURITY_PATCH := 2099-12-31
+VENDOR_SECURITY_PATCH := 2099-12-31
+PLATFORM_VERSION := 99.87.36
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_CRYPTO_FBE := true
+TW_INCLUDE_FBE_METADATA_DECRYPT := true
 BOARD_USES_METADATA_PARTITION := true
-
+BOARD_VNDK_VERSION := current
+TW_USE_FSCRYPT_POLICY := 2
 
 # TWRP - Language
 TW_EXTRA_LANGUAGES := true

@@ -1,5 +1,8 @@
 # Import additional recovery configuration specific to the project
 import /init.recovery.project.rc
+import /keymint.rc
+import /gatekeeperd.rc 
+import /gatekeeper1.0.rc
 
 # Initialize USB configuration and set permissions for driver loading script
 on init
@@ -50,8 +53,24 @@ service cp_prop /bak/prop.sh
     oneshot
     seclabel u:r:recovery:s0    
     
+service decypt /system/bin/decypt.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+    
 # When recovery service is running, start the vendor DLKM module loading service
 on property:init.svc.recovery=running
     start load_vendor_dlkm_modules
+    
+on property:ro.crypto.state=encrypted
+    start decypt    
+    
+on property:crypto.ready=1
+    start vendor.keymint-default
+    start vendor.gatekeeper-1-0
+    start gatekeeperd
+    
 	
 	
