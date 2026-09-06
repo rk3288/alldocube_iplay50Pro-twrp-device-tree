@@ -7,6 +7,11 @@ DEVICE_PATH := device/alldocube/T1030M
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
+BUILD_BROKEN_DUP_RULES := true
+TARGET_SKIP_APEX_UPDATE := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+BUILD_BROKEN_NINJA_USES_ENV_VARS += RTIC_MPGEN
+BUILD_BROKEN_PLUGIN_VALIDATION := soong-libaosprecovery_defaults soong-libguitwrp_defaults soong-libminuitwrp_defaults soong-vold_defaults
 
 # Architecture
 TARGET_ARCH := arm64
