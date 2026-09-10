@@ -40,14 +40,6 @@ PRODUCT_PACKAGES += \
         fastbootd
 
 
-# Boot control HAL
-PRODUCT_PACKAGES += \
-    android.hardware.boot@1.2-mtkimpl \
-    android.hardware.boot@1.2-mtkimpl.recovery
-
-PRODUCT_PACKAGES_DEBUG += \
-    bootctl
-    
 # Health Hal
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
