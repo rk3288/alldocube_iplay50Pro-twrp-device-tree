@@ -11,4 +11,4 @@ COMMON_LUNCH_CHOICES := \
 	twrp_T1030M-user \
 	twrp_T1030M-userdebug \
 	twrp_T1030M-eng \
-    
+    twrp_T1030M-ap2a-eng \
