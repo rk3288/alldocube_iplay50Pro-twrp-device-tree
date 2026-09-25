@@ -7,3 +7,18 @@ ro.boot.boot_devices=bootdevice,soc/11270000.ufshci,11270000.ufshci
 persist.service.adb.enable=1
 persist.service.debuggable=1
 persist.sys.usb.config=mtp,adb
+
+# crypto fix
+
+ro.crypto.volume.filenames_mode=aes-256-cts
+
+# Gatekeeper
+ro.hardware.gatekeeper=trustkernel
+
+# TEE
+ro.vendor.mtk_tee_gp_support=1
+ro.vendor.mtk_trustkernel_tee_support=1
+
+keymint_ver=1
+
+
